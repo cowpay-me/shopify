@@ -1,0 +1,268 @@
+-- MySQL dump 10.14  Distrib 5.5.65-MariaDB, for Linux (x86_64)
+--
+-- Host: 127.0.0.1    Database: Fawrypay_db
+-- ------------------------------------------------------
+-- Server version	5.5.65-MariaDB
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Current Database: `Fawrypay_db`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `Fawrypay_db` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `Fawrypay_db`;
+
+--
+-- Table structure for table `charges`
+--
+
+DROP TABLE IF EXISTS `charges`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `charges` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `charge_id` bigint(20) NOT NULL,
+  `test` tinyint(1) NOT NULL DEFAULT '0',
+  `status` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `terms` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` decimal(8,2) NOT NULL,
+  `capped_amount` decimal(8,2) DEFAULT NULL,
+  `trial_days` int(11) DEFAULT NULL,
+  `billing_on` timestamp NULL DEFAULT NULL,
+  `activated_on` timestamp NULL DEFAULT NULL,
+  `trial_ends_on` timestamp NULL DEFAULT NULL,
+  `cancelled_on` timestamp NULL DEFAULT NULL,
+  `expires_on` timestamp NULL DEFAULT NULL,
+  `plan_id` int(10) unsigned DEFAULT NULL,
+  `description` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `reference_charge` bigint(20) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `user_id` bigint(20) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `charges_user_id_foreign` (`user_id`),
+  KEY `charges_plan_id_foreign` (`plan_id`),
+  CONSTRAINT `charges_plan_id_foreign` FOREIGN KEY (`plan_id`) REFERENCES `plans` (`id`),
+  CONSTRAINT `charges_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `charges`
+--
+
+LOCK TABLES `charges` WRITE;
+/*!40000 ALTER TABLE `charges` DISABLE KEYS */;
+/*!40000 ALTER TABLE `charges` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `configurations`
+--
+
+DROP TABLE IF EXISTS `configurations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `configurations` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `store_id` int(11) NOT NULL DEFAULT '0',
+  `meta_key` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_value` varchar(10999) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `configurations`
+--
+
+LOCK TABLES `configurations` WRITE;
+/*!40000 ALTER TABLE `configurations` DISABLE KEYS */;
+INSERT INTO `configurations` VALUES (2,1,'zahaby.myshopify.com_fawrypay_detail','a:6:{s:11:\"enable_live\";s:1:\"1\";s:7:\"sandbox\";s:1:\"1\";s:22:\"sandbox_account_number\";s:24:\"1tSa6uxz2nTl878/el08Sg==\";s:16:\"sandbox_hash_key\";s:32:\"9988fb28599c490fbdbd4254fcfacf54\";s:19:\"live_account_number\";s:24:\"1tSa6uxz2nTl878/el08Sg==\";s:13:\"live_hash_key\";s:32:\"9988fb28599c490fbdbd4254fcfacf54\";}','2020-05-19 01:18:04','2020-05-21 07:16:12'),(3,10,'zahaby2.myshopify.com_fawrypay_detail','a:6:{s:11:\"enable_live\";s:1:\"1\";s:7:\"sandbox\";s:1:\"1\";s:22:\"sandbox_account_number\";s:24:\"1tSa6uxz2nTl878/el08Sg==\";s:16:\"sandbox_hash_key\";s:32:\"9988fb28599c490fbdbd4254fcfacf54\";s:19:\"live_account_number\";s:24:\"1tSa6uxz2nTl878/el08Sg==\";s:13:\"live_hash_key\";s:32:\"9988fb28599c490fbdbd4254fcfacf54\";}','2020-05-22 03:05:23','2020-05-24 08:15:38'),(4,11,'zahabyfawry.myshopify.com_fawrypay_detail','a:6:{s:11:\"enable_live\";s:1:\"1\";s:7:\"sandbox\";s:1:\"1\";s:22:\"sandbox_account_number\";s:24:\"1tSa6uxz2nTl878/el08Sg==\";s:16:\"sandbox_hash_key\";s:32:\"9988fb28599c490fbdbd4254fcfacf54\";s:19:\"live_account_number\";s:24:\"1tSa6uxz2nTl878/el08Sg==\";s:13:\"live_hash_key\";s:32:\"9988fb28599c490fbdbd4254fcfacf54\";}','2020-05-24 09:33:04','2020-05-24 09:33:04'),(5,12,'fawrydev.myshopify.com_fawrypay_detail','a:6:{s:11:\"enable_live\";s:1:\"1\";s:7:\"sandbox\";s:1:\"1\";s:22:\"sandbox_account_number\";s:24:\"1tSa6uxz2nTl878/el08Sg==\";s:16:\"sandbox_hash_key\";s:32:\"9988fb28599c490fbdbd4254fcfacf54\";s:19:\"live_account_number\";s:24:\"1tSa6uxz2nTl878/el08Sg==\";s:13:\"live_hash_key\";s:32:\"9988fb28599c490fbdbd4254fcfacf54\";}','2020-05-30 07:32:47','2020-06-15 10:00:32');
+/*!40000 ALTER TABLE `configurations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `failed_jobs`
+--
+
+DROP TABLE IF EXISTS `failed_jobs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `failed_jobs` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `failed_jobs`
+--
+
+LOCK TABLES `failed_jobs` WRITE;
+/*!40000 ALTER TABLE `failed_jobs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `failed_jobs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `migrations`
+--
+
+DROP TABLE IF EXISTS `migrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `migrations` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `migrations`
+--
+
+LOCK TABLES `migrations` WRITE;
+/*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
+INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2019_08_19_000000_create_failed_jobs_table',1),(3,'2020_01_29_010501_create_plans_table',1),(4,'2020_01_29_230905_create_shops_table',1),(5,'2020_01_29_231006_create_charges_table',1),(6,'2014_10_12_000000_create_configurations',2),(7,'2019_11_27_071652_create_payments_table',2);
+/*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `payments`
+--
+
+DROP TABLE IF EXISTS `payments`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `payments` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `order_id` bigint(20) NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `txid` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `payment_method` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `customer_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `amount` decimal(8,2) DEFAULT NULL,
+  `payment_status` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `processed` int(11) DEFAULT NULL,
+  `order_status_url` text COLLATE utf8mb4_unicode_ci,
+  `store_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `payments_order_id_unique` (`order_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `payments`
+--
+
+LOCK TABLES `payments` WRITE;
+/*!40000 ALTER TABLE `payments` DISABLE KEYS */;
+INSERT INTO `payments` VALUES (1,2341070176301,'zahaby@hotmail.com',NULL,NULL,NULL,NULL,NULL,NULL,'https://zahaby.myshopify.com/36345217069/orders/2ef22fe42d260b098b0a2273a33caa5b/authenticate?key=bad5f09c32236cf1fa1cb4c92d163770',1,'2020-05-19 07:30:35','2020-05-19 07:30:35'),(2,2347094048813,'zahaby@hotmail.com',NULL,NULL,NULL,NULL,NULL,NULL,'https://zahaby.myshopify.com/36345217069/orders/cded18d064d868d7ff34c46afc00f51c/authenticate?key=f6fba4879b1fb883b42894002f94c107',1,'2020-05-20 08:08:24','2020-05-20 08:08:24'),(3,2347295604781,'zahaby@hotmail.com',NULL,NULL,NULL,NULL,NULL,NULL,'https://zahaby.myshopify.com/36345217069/orders/489e3414c2ecb6f621a19d2e5313d026/authenticate?key=a33a1e6811f21db3c2ea6b53f77229a0',1,'2020-05-20 08:16:36','2020-05-20 08:16:36'),(6,2347402395693,'zahaby@hotmail.com',NULL,NULL,NULL,NULL,NULL,NULL,'https://zahaby.myshopify.com/36345217069/orders/3669f8b6db99773f2fce8274b44cf071/authenticate?key=40a41151af2cc417c1dc23f900e9e465',1,'2020-05-20 08:42:33','2020-05-20 08:42:33'),(8,2352899391533,'zahaby@hotmail.com',NULL,NULL,NULL,NULL,NULL,NULL,'https://zahaby.myshopify.com/36345217069/orders/f41355fefb410de610cf2af28e86aa94/authenticate?key=305b71f2d38de8a30391ade00a5bdc6b',1,'2020-05-21 04:55:36','2020-05-21 04:55:36'),(9,2352934191149,'zahaby@hotmail.com',NULL,NULL,NULL,NULL,NULL,NULL,'https://zahaby.myshopify.com/36345217069/orders/1b3511cf479b4344a3bac520928d752f/authenticate?key=96dba267b2822a7feadc4ab074bdfcf1',1,'2020-05-21 04:57:21','2020-05-21 04:57:21'),(10,2353433837613,'zahay@hotmail.com',NULL,NULL,NULL,NULL,NULL,NULL,'https://zahaby.myshopify.com/36345217069/orders/4308e7f64d7d27efbfaf0415f8057941/authenticate?key=24466eeec236ffb77eb4be7941590fbf',1,'2020-05-21 07:10:53','2020-05-21 07:10:53'),(11,2353487839277,'zahay@hotmail.com',NULL,NULL,NULL,NULL,NULL,NULL,'https://zahaby.myshopify.com/36345217069/orders/33a31dc54e06dbfce5888a38e60e64e3/authenticate?key=1c34a36b0cf25ec886858faa530127c4',1,'2020-05-21 07:23:56','2020-05-21 07:23:56'),(12,2480542974108,'zahaby@hotmail.com',NULL,NULL,NULL,NULL,NULL,NULL,'https://fawrydev.myshopify.com/39921287324/orders/66520b6fae76e694a090a1b46efe001d/authenticate?key=102d8e2319a99c817486e445d3dbc899',12,'2020-05-30 07:34:07','2020-05-30 07:34:07'),(13,2480585212060,'zahaby@hotmail.com',NULL,NULL,NULL,NULL,NULL,NULL,'https://fawrydev.myshopify.com/39921287324/orders/b46f7ea56b1e8de0ff8be5a60ccd62ad/authenticate?key=f4377d8b44c89cdf917f87690fb5887a',12,'2020-05-30 08:47:24','2020-05-30 08:47:24'),(14,2480591208604,'zahaby@hotmail.com',NULL,NULL,NULL,NULL,NULL,NULL,'https://fawrydev.myshopify.com/39921287324/orders/b39664f8a3b6ac92fdea190b68304ca3/authenticate?key=6fd2fd83a31d6ef48cb97514ee52fc51',12,'2020-05-30 08:57:23','2020-05-30 08:57:23'),(15,2480629711004,'zahaby@hotmail.com',NULL,NULL,NULL,NULL,NULL,NULL,'https://fawrydev.myshopify.com/39921287324/orders/5644b917b250d953a33ff7b99c62c134/authenticate?key=4364e7a6f657c1224ff98c5331a5f83b',12,'2020-05-30 09:54:55','2020-05-30 09:54:55'),(16,2480633348252,'zahaby@hotmail.com',NULL,NULL,NULL,NULL,NULL,NULL,'https://fawrydev.myshopify.com/39921287324/orders/ee91abca0bb44b348693308ae34f9fff/authenticate?key=56f78eeeddbeeeb0c814dd109225f5b0',12,'2020-05-30 09:59:38','2020-05-30 09:59:38'),(17,2480651534492,'zahaby@hotmail.com',NULL,NULL,NULL,NULL,NULL,NULL,'https://fawrydev.myshopify.com/39921287324/orders/3be1bbce65ecaaef25a6fad335ed176d/authenticate?key=16ec575807e1e2c825a3681e46378d86',12,'2020-05-30 10:24:39','2020-05-30 10:24:39'),(18,2481719017628,'zahaby@hotmail.com',NULL,'PAYATFAWRY','2481719017628',100.00,'UNPAID',1,'https://fawrydev.myshopify.com/39921287324/orders/f1e39c00d06d6fee14adfb53be0bdecc/authenticate?key=3898a91faefdb64ec1abba9e88dcfe39',12,'2020-05-31 02:01:17','2020-05-31 02:01:39'),(19,2481765875868,'zahaby@hotmail.com',NULL,NULL,NULL,NULL,NULL,NULL,'https://fawrydev.myshopify.com/39921287324/orders/f65a0651f474173189e453319462451d/authenticate?key=55cb614f17173d336075482046bea8a1',12,'2020-05-31 03:04:42','2020-05-31 03:04:42'),(20,2481783898268,NULL,NULL,'PAYATFAWRY','2481783898268',100.00,'UNPAID',1,'https://fawrydev.myshopify.com/39921287324/orders/fc9a222f3340613f1f3ff6683f7d28fc/authenticate?key=dc4488bea848887a5c881a48e07d7ea7',12,'2020-05-31 03:29:25','2020-05-31 03:29:46'),(21,2481787830428,'zahaby@hotmail.com',NULL,NULL,NULL,NULL,NULL,NULL,'https://fawrydev.myshopify.com/39921287324/orders/0d16cc9ea1dfa8c26d5c7e2b30cc1a4c/authenticate?key=d51d46e018543073cdbe1ad4b195d31c',12,'2020-05-31 03:35:21','2020-05-31 03:35:21'),(22,2483317244060,'bassem.mahmoud@fawry.com',NULL,NULL,NULL,NULL,NULL,NULL,'https://fawrydev.myshopify.com/39921287324/orders/5b5aec9c32c3fc66d14f453d66018b99/authenticate?key=35c596e735c30d4002729ed50c00ae14',12,'2020-06-01 06:42:47','2020-06-01 06:42:47'),(23,2483376586908,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'https://fawrydev.myshopify.com/39921287324/orders/2d14c617105b6222bb151a99b9427f96/authenticate?key=25ed08c05bbe67b29037a48d9d438d1a',12,'2020-06-01 08:10:07','2020-06-01 08:10:07'),(24,2483378946204,'mohamed.abdelrahman@fawry.com',NULL,NULL,NULL,NULL,NULL,NULL,'https://fawrydev.myshopify.com/39921287324/orders/cc97632602d189a5b995b5a32291de4b/authenticate?key=f3811cea93c725c224644199ed617b72',12,'2020-06-01 08:13:31','2020-06-01 08:13:31'),(25,2494010065052,'zahaby@hotmail.com',NULL,NULL,NULL,NULL,NULL,NULL,'https://fawrydev.myshopify.com/39921287324/orders/54643b1aca6d695f30ec32fb0cb3651c/authenticate?key=a790ebe03c8d79882ae17ae65b27ef59',12,'2020-06-07 11:15:13','2020-06-07 11:15:13'),(26,2495942459548,'zahaby@hotmail.com',NULL,NULL,NULL,NULL,NULL,NULL,'https://fawrydev.myshopify.com/39921287324/orders/7b30f56b77ed68ba89ac81cf644d810b/authenticate?key=2c3e9e0c4d64207f5baead45ab96e25d',12,'2020-06-08 07:53:19','2020-06-08 07:53:19'),(27,2498601451676,'mostafa.ahmed91@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,'https://fawrydev.myshopify.com/39921287324/orders/479fea5c72fa2e9d50d46373c4a5bb48/authenticate?key=55c38b784c27701ebf67b76d727768a8',12,'2020-06-09 18:20:12','2020-06-09 18:20:12'),(28,2502382190748,'zahaby@hotmail.com',NULL,NULL,NULL,NULL,'CANCELLED',1,'https://fawrydev.myshopify.com/39921287324/orders/ea5e0964be63a5109d5f206a7c9f29f1/authenticate?key=f5cd22aedcf18e4926abfa1ca1ca1b2f',12,'2020-06-11 21:04:07','2020-06-11 21:04:24'),(29,2502408634524,'zahaby@hotmail.com',NULL,NULL,NULL,NULL,'CANCELLED',1,'https://fawrydev.myshopify.com/39921287324/orders/0fc549339a4140da208ba32671d90c1c/authenticate?key=7c35fe4accc3d5167ee201d9d63a2d12',12,'2020-06-11 21:26:29','2020-06-11 21:26:42'),(30,2502409879708,NULL,NULL,NULL,NULL,NULL,'CANCELLED',1,'https://fawrydev.myshopify.com/39921287324/orders/c58393fd30c9be02c07bf9f9bdafdf2b/authenticate?key=5e48616b524a342ca53b5da609da409c',12,'2020-06-11 21:27:29','2020-06-11 21:27:53'),(31,2502373605532,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'https://fawrydev.myshopify.com/39921287324/orders/79505361247dbd9294c2aac257fca0b7/authenticate?key=574556fc7e1ac826cbe85a4657c7b5c3',12,'2020-06-11 22:27:30','2020-06-11 22:27:30'),(32,2504978464924,NULL,NULL,NULL,NULL,NULL,'CANCELLED',1,'https://fawrydev.myshopify.com/39921287324/orders/22b79d5ded9f1cf89e822b5373f101ad/authenticate?key=2dec82ed84720de55478d78d759a6a04',12,'2020-06-13 01:47:43','2020-06-13 01:47:58'),(33,2508904464540,NULL,NULL,NULL,NULL,NULL,'CANCELLED',1,'https://fawrydev.myshopify.com/39921287324/orders/c4480cf51e65ebcb5b73016d64150590/authenticate?key=0d33c2be1bc6b3b1b49494543b9fd1e8',12,'2020-06-15 10:15:33','2020-06-15 10:16:54');
+/*!40000 ALTER TABLE `payments` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `plans`
+--
+
+DROP TABLE IF EXISTS `plans`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `plans` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` decimal(8,2) NOT NULL,
+  `capped_amount` decimal(8,2) DEFAULT NULL,
+  `terms` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `trial_days` int(11) DEFAULT NULL,
+  `test` tinyint(1) NOT NULL DEFAULT '0',
+  `on_install` tinyint(1) NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `plans`
+--
+
+LOCK TABLES `plans` WRITE;
+/*!40000 ALTER TABLE `plans` DISABLE KEYS */;
+/*!40000 ALTER TABLE `plans` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `shopify_grandfathered` tinyint(1) NOT NULL DEFAULT '0',
+  `shopify_namespace` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `shopify_freemium` tinyint(1) NOT NULL DEFAULT '0',
+  `plan_id` int(10) unsigned DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`),
+  KEY `users_plan_id_foreign` (`plan_id`),
+  CONSTRAINT `users_plan_id_foreign` FOREIGN KEY (`plan_id`) REFERENCES `plans` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'zahaby.myshopify.com','shop@zahaby.myshopify.com',NULL,'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',NULL,'2020-05-15 05:37:45','2020-05-21 07:16:01',0,NULL,0,NULL,NULL),(2,'zababy.myshopify.com','shop@zababy.myshopify.com',NULL,'',NULL,'2020-05-17 19:07:42','2020-05-17 19:07:42',0,NULL,0,NULL,NULL),(3,'myshopify.com','shop@myshopify.com',NULL,'',NULL,'2020-05-17 19:51:14','2020-05-17 19:51:14',0,NULL,0,NULL,NULL),(4,'bassem.myshopify.com','shop@bassem.myshopify.com',NULL,'',NULL,'2020-05-18 21:49:00','2020-05-18 21:49:00',0,NULL,0,NULL,NULL),(5,'mundilentes-dev2.myshopify.com','shop@mundilentes-dev2.myshopify.com',NULL,'',NULL,'2020-05-19 08:36:35','2020-05-19 08:36:35',0,NULL,0,NULL,NULL),(6,'zajan.myshopify.com','shop@zajan.myshopify.com',NULL,'',NULL,'2020-05-19 19:40:17','2020-05-19 19:40:17',0,NULL,0,NULL,NULL),(7,'zahaby.myshipify.com','shop@zahaby.myshipify.com',NULL,'',NULL,'2020-05-20 00:07:40','2020-05-20 00:07:40',0,NULL,0,NULL,NULL),(8,'qahwak.myshopify.com','shop@qahwak.myshopify.com',NULL,'',NULL,'2020-05-20 00:08:16','2020-05-20 00:08:16',0,NULL,0,NULL,NULL),(9,'zahaby1.myshopify.com','shop@zahaby1.myshopify.com',NULL,'',NULL,'2020-05-22 02:49:09','2020-05-22 02:49:09',0,NULL,0,NULL,NULL),(10,'zahaby2.myshopify.com','shop@zahaby2.myshopify.com',NULL,'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',NULL,'2020-05-22 03:04:02','2020-05-24 08:15:34',0,NULL,0,NULL,NULL),(11,'zahabyfawry.myshopify.com','shop@zahabyfawry.myshopify.com',NULL,'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',NULL,'2020-05-24 08:49:12','2020-05-24 09:31:52',0,NULL,0,NULL,NULL),(12,'fawrydev.myshopify.com','shop@fawrydev.myshopify.com',NULL,'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',NULL,'2020-05-30 07:19:52','2020-06-15 10:00:22',0,NULL,0,NULL,NULL),(13,'my-fawrypay-store.myshopify.com','shop@my-fawrypay-store.myshopify.com',NULL,'',NULL,'2020-06-13 09:19:03','2020-06-13 09:19:03',0,NULL,0,NULL,NULL),(14,'fawrypay.com','shop@fawrypay.com',NULL,'',NULL,'2020-06-13 17:31:10','2020-06-13 17:31:10',0,NULL,0,NULL,NULL),(15,'testfawrypay.myshopify.com','shop@testfawrypay.myshopify.com',NULL,'',NULL,'2020-06-13 17:32:24','2020-06-13 17:32:24',0,NULL,0,NULL,NULL),(16,'testfawrypay1.myshopify.com','shop@testfawrypay1.myshopify.com',NULL,'',NULL,'2020-06-13 17:32:42','2020-06-13 17:32:42',0,NULL,0,NULL,NULL),(17,'fawrypay.myshopify.com','shop@fawrypay.myshopify.com',NULL,'',NULL,'2020-06-13 17:32:54','2020-06-13 17:32:54',0,NULL,0,NULL,NULL),(18,'mimocodes.shopify.com','shop@mimocodes.shopify.com',NULL,'',NULL,'2020-06-23 15:32:16','2020-06-23 15:32:16',0,NULL,0,NULL,NULL),(19,'mimocodes.myshopify.com','shop@mimocodes.myshopify.com',NULL,'',NULL,'2020-06-23 15:33:54','2020-06-23 15:33:54',0,NULL,0,NULL,NULL);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2020-07-03  3:35:43

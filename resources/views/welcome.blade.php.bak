@@ -19,48 +19,6 @@
                 </ul>
             </div>
             @endif
-             <div class="seo-setting col-md-8">   
-                <div class="row col-md-12">
-                    <div class="col-lg-12 mb-3">
-                        <h5>Shopify-Partner Application Info</h5>
-                    </div> 
-                </div>
-
-                
-                <div class="col-md-8">
-                    {!! htmlspecialchars_decode(Form::label('Application Name', '', array('class' => 'col-form-label'))) !!}
-                    {!! Form::text('app_name', $value =  $settings ? $settings['app_name'] : '', 
-                    array(
-                    'class'=>'form-control', 
-                    'placeholder'=>'Enter Application Name'
-                    )
-                    )
-                    !!}
-                </div>
-                <div class="col-md-8">
-                    {!! htmlspecialchars_decode(Form::label('Application Key', '', array('class' => 'col-form-label'))) !!}
-                    {!! Form::text('app_key', $value =  $settings ? $settings['app_key'] : '', 
-                    array(
-                    'class'=>'form-control', 
-                    'placeholder'=>'Enter Application Key'
-                    )
-                    )
-                    !!}
-                </div>
-                 <div class="col-md-8">
-                    {!! htmlspecialchars_decode(Form::label('Application Secret', '', array('class' => 'col-form-label'))) !!}
-                    {!! Form::text('app_secret', $value =  $settings ? $settings['app_secret'] : '', 
-                    array(
-                    'class'=>'form-control', 
-                    'placeholder'=>'Enter Application Secret'
-                    )
-                    )
-                    !!}
-                </div>
-                
-            </div>
-        
-            
             <div class="seo-setting col-md-8">             
                 <div class="row col-md-12">
                     <div class="col-lg-12 mt-3 mb-3">

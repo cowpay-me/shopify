@@ -1,0 +1,891 @@
+    1  subscription-manager attach --auto 
+    2  systemctl disable firewalld.service 
+    3  systemctl stop firewalld.service 
+    4  vim /etc/selinux/config 
+    5  clear
+    6  yum clean all
+    7  cat /etc/redhat-release 
+    8  yum update -y
+    9  cat /etc/redhat-release 
+   10  init 6
+   11  visudo 
+   12  df -h
+   13  exit
+   14  chronyc tracking
+   15  vim /etc/chrony.conf 
+   16  systemctl start chrony
+   17  systemctl start chronyd
+   18  systemctl status chronyd
+   19  date
+   20  watch chronyc tracking
+   21  chronyc
+   22  chronyc tracking
+   23  date
+   24  scp /etc/chrony.conf root@10.144.70.203:/etc
+   25  exit
+   26  cat /etc/redhat-release  cat /etc/redhat-release
+   27  yum install epel-release
+   28  rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+   29  rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+   30  yum update
+   31  ls
+   32  rpm -Uvh https://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-7-12.noarch.rpm
+   33  rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+   34  rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+   35  rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+   36  yum --enablerepo=remi,epel install httpd
+   37  yum --enablerepo=remi,epel install mysql-server
+   38  service mysqld start
+   39  yum --enablerepo=remi,epel install mysql-server
+   40  yum --enablerepo=remi,epel install php php-zip php-mysql php-mcrypt php-xml php-mbstring
+   41  service httpd restart
+   42  curl -sS https://getcomposer.org/installer | php
+   43  mv composer.phar /usr/bin/composer
+   44  chmod +x /usr/bin/composer
+   45  cd /var/www
+   46  git clone https://github.com/laravel/laravel.git
+   47  yum install git 
+   48  git clone https://github.com/laravel/laravel.git
+   49  cd /var/www/laravel
+   50  composer install
+   51  chown -R apache.apache /var/www/laravel
+   52  chmod -R 755 /var/www/laravel
+   53  chmod -R 755 /var/www/laravel/storage
+   54  chcon -R -t httpd_sys_rw_content_t /var/www/laravel/storage
+   55  cp .env.example .env
+   56  php artisan key:generate
+   57  vim /etc/httpd/conf/httpd.conf
+   58  vim /etc/httpd/conf/httpd.conf
+   59  yum install nano
+   60  nano install nano
+   61  nano /etc/httpd/conf/httpd.conf
+   62  service httpd restart
+   63  curl http://localhost
+   64  curl https://localhost
+   65  curl http://localhost
+   66  ssh 10.144.70.203
+   67  yum install mariadb-server mariadb-libe mariadb
+   68  service mysqld start
+   69  service mariadb start
+   70  /usr/bin/mysql_secure_installation 
+   71  php artisan key:generate
+   72  service httpd restart
+   73  curl http://localhost
+   74  curl http://google.com
+   75  curl http://localhost
+   76  curl http://127.0.0.1
+   77  cd /var/www/html/
+   78  ll
+   79  ls
+   80  cd ..
+   81  ls
+   82  cd laravel/
+   83  ls
+   84  cd ..
+   85  ll
+   86  cd html/
+   87  nano 1.txt
+   88  curl http://localhost/1.txt
+   89  curl http://localhost/1.txta
+   90  curl http://localhostaa
+   91  curl http://localhost/ss
+   92  curl http://localhost/ss.html
+   93  curl http://10.144.70.202/1.txt
+   94  curl http://10.144.70.202
+   95  nano /etc/httpd/conf/httpd.conf 
+   96  service httpd restart
+   97  curl 
+   98  curl http://localhost
+   99  wget http://localhost
+  100  wget http://localhost/1.txt
+  101  chown -R apache.apache /var/www/laravel
+  102  chmod -R 755 /var/www/laravel
+  103  chmod -R 755 /var/www/laravel/storage
+  104  chcon -R -t httpd_sys_rw_content_t /var/www/laravel/storage
+  105  chmod -R 755 laravel_blog
+  106  cd ..
+  107  cd laravel/
+  108  ll
+  109  cd public/
+  110  ll
+  111  cd ..
+  112  ll
+  113  ll
+  114  wget http://localhost
+  115  ls
+  116  cd app/
+  117  ll
+  118  cd ..
+  119  cd config/
+  120  ll
+  121  cd ..
+  122  ll
+  123  ls
+  124  cd storage/
+  125  ls
+  126  cd logs/
+  127  ls
+  128  ll
+  129  cd ..
+  130  ls
+  131  cd ..
+  132  ls 
+  133  cd ..
+  134  ls
+  135  cd html/
+  136  ll
+  137  cd ..
+  138  cd laravel/
+  139  ll
+  140  nano .env
+  141  wget http://localhost
+  142  ls storage/logs/
+  143  nano /var/log/httpd/access_log 
+  144  nano /var/log/httpd/access_log 
+  145  nano /var/log/httpd/error_log 
+  146  nano public/index.php 
+  147  nano /var/log/httpd/error_log 
+  148  nano public/index.php 
+  149  nano /var/log/httpd/error_log 
+  150  yum remove php
+  151  yum install php
+  152  yum remove php
+  153  yum --enablerepo=remi,epel install php php-zip php-mysql php-mcrypt php-xml php-mbstring
+  154  service httpd restart
+  155  rpm -Uvh https://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-7-12.noarch.rpm
+  156  rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+  157  wget http://localhost
+  158  subscription-manager repos --enable rhel-server-rhscl-7-eus-rpms
+  159  yum install php55 php55-php php55-php-gd php55-php-mbstring
+  160  yum install php55-php-mysqlnd
+  161  mv /etc/httpd/conf.d/php.conf /etc/httpd/conf.d/php54.off
+  162  mv /etc/httpd/conf.modules.d/10-php.conf /etc/httpd/conf.modules.d/10-php54.off
+  163  service httpd restart
+  164  ll /opt/rh/
+  165  wget http://localhost
+  166  nano /var/log/httpd/error_log 
+  167  php artisan key:generate
+  168  yum remove php
+  169  service httpd restart
+  170  php artisan key:generate
+  171  nano /var/log/httpd/error_log 
+  172  wget http://localhost
+  173  nano /var/log/httpd/error_log 
+  174  wget http://localhost
+  175  nano /var/log/httpd/error_log 
+  176  ls opt/remi/php
+  177  ls /opt/remi/php55/root/usr/share/pear
+  178  php --version
+  179  cd ~
+  180  curl 'https://setup.ius.io/' -o set
+  181  up-ius.sh
+  182  curl 'https://setup.ius.io/' -o set up-ius.sh
+  183  curl 'https://setup.ius.io/' -o setup-ius.sh
+  184  bash setup-ius.sh 
+  185  yum remove php-cli mod_php php-commin
+  186  yum remove php-cli mod_php php-common
+  187  yum install mod_php70u php70u-cli php70u-mysqlnd
+  188  yum install mod_php70u php70u-cli php70u-mysqlnd
+  189  yum install mod_php php-cli php-mysqlnd
+  190  yum install mod_php php-cli php-mysqlnd --skip-broken
+  191  yum install mod_php73u php73u-cli php73u-mysqlnd
+  192  yum install mod_php73 php73-cli php73-mysqlnd
+  193  apachectl restart
+  194  systemctl status httpd
+  195  php artisan key:generate
+  196  cd /var/www/laravel/
+  197  php artisan key:generate
+  198  cp .env.example .env
+  199  php artisan key:generate
+  200  wget http://localhost
+  201  cat /var/log/httpd/error_log 
+  202  nano /var/log/httpd/error_log 
+  203  wget http://localhost
+  204  nano /var/log/httpd/error_log 
+  205  cat /var/log/httpd/error_log 
+  206  cat public/index.php 
+  207  nano public/index.php 
+  208  ls
+  209  cd ..
+  210  ls
+  211  cd laravel/
+  212  ls
+  213  cd public/
+  214  ls
+  215  ll
+  216  cd ..
+  217  car public/index.php 
+  218  cat public/index.php 
+  219  curl -sS https://getcomposer.org/installer | php
+  220  curl -sS https://getcomposer.org/installer | php --disable-json
+  221  curl -sS https://getcomposer.org/installer | php
+  222  php --ini 
+  223  yum install php5-json
+  224  yum install php7-json
+  225  yum install php70-json
+  226  yum install php70u-json
+  227  yum install php73-json
+  228  curl -sS https://getcomposer.org/installer | php
+  229  mv composer.phar /usr/bin/composer
+  230  chmod +x /usr/bin/composer
+  231  cd /var/www/laravel
+  232  composer install
+  233  yum install php73-mbstring
+  234  composer install
+  235  yum install php73-dom
+  236  yum install php73-xml
+  237  composer install
+  238  chown -R apache.apache /var/www/laravel
+  239  chmod -R 755 /var/www/laravel
+  240  chmod -R 755 /var/www/laravel/storage
+  241  chcon -R -t httpd_sys_rw_content_t /var/www/laravel/storage
+  242  php artisan key:generate
+  243  vim /etc/httpd/conf/httpd.conf
+  244  service httpd restart
+  245  wget http://localhost
+  246  nano /var/log/httpd/error_log 
+  247  wget http://localhost
+  248  cat /var/log/httpd/error_log 
+  249  php artisan config:clear
+  250  php artisan cache:clear
+  251  wget http://localhost
+  252  cat /var/log/httpd/error_log 
+  253  php --version
+  254  apachectl resources/
+  255  apachectl restart
+  256  systemctl status httpd
+  257  wget http://localhost
+  258  cat /var/log/httpd/error_log 
+  259  composer update
+  260  conmposer dump-autoload
+  261  composer dump-autoload
+  262  php artisan config:cache
+  263  php artisan route:cache
+  264  php artisan migrate --force
+  265  curl localhost 
+  266  wget localhost
+  267  tail -f /var/log/httpd/error_log 
+  268  php artisan migrate --force
+  269  cat .env
+  270  nano .env
+  271  php artisan migrate --force
+  272  mysql
+  273  mysql -u root -p f@wry
+  274  mysql -u root
+  275  mysql -u root -pf@wry
+  276  nano .env
+  277  mysql -u root@localhost -pf@wry
+  278  php artisan migrate --force
+  279  nano /etc/my.cnf
+  280  service mysal restart
+  281  service mysql restart
+  282  service mariadb restart
+  283  mysql -u root -p
+  284  php artisan migrate --force
+  285  wget localhost
+  286  cat /var/log/httpd/error_log 
+  287  cat composer.json
+  288  nano composer.json 
+  289  ls
+  290  cd public/
+  291  ls
+  292  nano 1.php
+  293  wget http://localhost/1.php
+  294  rm 1.php.1 
+  295  curl  http://localhost/1.php
+  296  clear
+  297  yum remove --setopt=clean_requirements_on_remove=1 php php-poar php-mysql php-cli php-common mod-php
+  298  curl  http://localhost/1.php
+  299  yum remove --setopt=clean_requirements_on_remove=1 php php-poar php-mysql php-cli php-common mod-php
+  300  yum remove --setopt=clean_requirements_on_remove=1 php73 php73-poar php73-mysql php73-cli php73-common mod-php73
+  301  php --version
+  302  yum remove --setopt=clean_requirements_on_remove=1 php70u php70u-poar php70u-mysql php70u-cli php70u-common mod-php70u
+  303  yum install php70u-cli
+  304  yum install epel-release
+  305  yum-config-manager --enable remi-php72
+  306  yum update
+  307  yum install php
+  308  curl  http://localhost/1.php
+  309  wget http://localhost/1.php
+  310  rm 1.php.1 
+  311  rm 1.php.1 
+  312  wget localhost
+  313  tail -f /var/log/httpd/error_log 
+  314  apachectl restart
+  315  wget localhost
+  316  tail -f /var/log/httpd/error_log 
+  317  nano /var/www/laravel/vendor/symfony/var-dumper/Resources/functions/dump.php
+  318  php --version
+  319  php -v
+  320  clear
+  321  php -v
+  322  quit
+  323  exit
+  324  yum install php
+  325  yum install php-mysql
+  326  yum install php-mcrypt
+  327  yum install php-dom
+  328  yum install php-mbstring
+  329  apachectl restart
+  330  yum install mod_ssl
+  331  yum install mod_reqrite
+  332  yum install mod_rewrite
+  333  yum install mod_rewrite
+  334  nano /etc/httpd/conf/httpd.conf
+  335  apachectl restart
+  336  curl localhost
+  337  clear
+  338  curl localhost
+  339  exit
+  340  exit
+  341  nano /etc/httpd/conf/httpd.conf
+  342  apachectl restart
+  343  tail -f /var/log/httpd/acc
+  344  tail -f /var/log/httpd/access_log 
+  345  cd /var/www/laravel/public/
+  346  cd ..
+  347  cat .env
+  348  nano .env
+  349  tail -f /var/log/httpd/access_log 
+  350  nano .env
+  351  curl localhost
+  352  nano .env
+  353  tail -f /var/log/httpd/access_log 
+  354  tail -f /var/log/httpd/error_log 
+  355  tail -f /var/log/httpd/access_log 
+  356  nano /etc/httpd/conf/httpd.conf
+  357  nano /etc/httpd/conf/httpd.conf
+  358  apachectl restart
+  359  nano /etc/httpd/conf/httpd.conf
+  360  apachectl restart
+  361  nano /etc/httpd/conf/httpd.conf
+  362  apachectl restart
+  363  tail -f /var/log/httpd/error_log 
+  364  tail -f /var/log/httpd/access_log 
+  365  apachectl restart
+  366  nano /etc/httpd/conf/httpd.conf
+  367  cd /
+  368  find / -name *.crt
+  369  apachectl restart
+  370  nano /etc/httpd/conf/httpd.conf
+  371  apachectl restart
+  372  nano /etc/httpd/conf/httpd.conf
+  373  apachectl restart
+  374  apachectl restart
+  375  nano /etc/httpd/conf/httpd.conf
+  376  apachectl restart
+  377  nano /etc/httpd/conf/httpd.conf
+  378  apachectl restart
+  379  find / -name *.key
+  380  find / -name fawrypay*
+  381  find / -name shopify
+  382  find / -name cert
+  383  find / -name crt
+  384  nano /etc/httpd/conf/httpd.conf
+  385  apachectl restart
+  386  nano /etc/httpd/conf/httpd.conf
+  387  apachectl restart
+  388  nano /etc/httpd/conf/httpd.conf
+  389  apachectl restart
+  390  nano /etc/httpd/conf/httpd.conf
+  391  apachectl restart
+  392  exit
+  393  nano /etc/httpd/conf/httpd.conf
+  394  apachectl restart
+  395  find ~ *.ca-bundle
+  396  find / *.ca-bundle
+  397  yum install mlocate
+  398  updatedb
+  399  lcoate
+  400  locate *.ca-bundle
+  401  lcoate *.crt
+  402  locate *.crt
+  403  cd /etc/pki/ca-trust/
+  404  ll
+  405  cd ..
+  406  cd tls/
+  407  ll
+  408  cd certs/
+  409  ll
+  410  ls
+  411  ll
+  412  ls  /etc/pki/ca-trust/extracted/pem/
+  413  ll  /etc/pki/ca-trust/extracted/pem/
+  414  ll  /etc/pki/ca-trust/extracted/
+  415  cd /
+  416  ll  /etc/pki/tls/certs/localhost.crt 
+  417  nano /etc/httpd/conf/httpd.conf
+  418  nano /etc/httpd/conf/httpd.conf
+  419  apachectl restart
+  420  nano /etc/httpd/conf/httpd.conf
+  421  apachectl restart
+  422  apachectl restart --v
+  423  apachectl restart -v
+  424  clear
+  425  apachectl restart
+  426  systemctl status httpd.service
+  427  journalctl -xe
+  428  nano /etc/httpd/conf/httpd.conf
+  429  apachectl restart
+  430  exit
+  431  yum remove httpd mariadb-server php56w php56w-mysql php56w-mcrypt php56w-dom php56w-mbstring
+  432  cd laravel
+  433  ll
+  434  ll
+  435  cd ..
+  436  ll
+  437  ll
+  438  ll
+  439  ll
+  440  ll
+  441  quit
+  442  exit
+  443  ls
+  444  cd /tmp/
+  445  ll
+  446  unzip
+  447  mkdir laravel
+  448  mv laravel.zip laravel\
+  449  mv laravel.zip laravel\laravel.zip
+  450  ls
+  451  ls
+  452  ll
+  453  cd laravel/
+  454  ls
+  455  ll
+  456  cd ..
+  457  mv laravellaravel.zip ./laravel/
+  458  ls
+  459  cd laravel/
+  460  mv laravellaravel.zip laravel.zip
+  461  unzip laravel.zip 
+  462  ls
+  463  cd /var/www/
+  464  ll
+  465  mv laravel/ laravel.old/
+  466  ls
+  467  ll
+  468  mv /tmp/laravel/laravel laravel/
+  469  chmod -R 755 /var/www/laravel
+  470  chmod -R 755 /var/www/laravel/storage
+  471  chcon -R -t httpd_sys_rw_content_t /var/www/laravel/storage
+  472  cd laravel
+  473  ls
+  474  ll
+  475  nano .env
+  476  php artisan vendor:publish --tag=shopify-migrations
+  477  php artisan migrate
+  478  mysql
+  479  mysql -u root
+  480  mysql -u root -p
+  481  service mariadb start
+  482  service mysql start
+  483  service mysqld start
+  484  service mariadbd start
+  485  yum install mariadb
+  486  mysql -u root -p
+  487  mysqladmin -u root -p status
+  488  service mysqld start
+  489  service mysqld status
+  490  yum remove mariadb
+  491  systemctl start mysql
+  492  systemctl start mysqld
+  493  yum remove mariadb
+  494  yum install mariadb
+  495  service mysqld status
+  496  mysql -u root -p
+  497  yum update
+  498  yum upgrade 
+  499  ll /var/lib/mysql/mysql/
+  500  cd /var/lib/mysql/
+  501  ls
+  502  cd /etc/
+  503  nano my.cnf
+  504  nano my.cnf
+  505  cd /var/lib/mysql/mysql/
+  506  ll
+  507  service  mysqld start
+  508  service  mysqld start
+  509  chmod -R 777 /var/lib/mysql/
+  510  ll
+  511  mysqladmin -u root -p status
+  512  srevice mysql restart
+  513  service mysql restart
+  514  service mysqld restart
+  515  service mariadb restart
+  516  yum install mariadb-server
+  517  systemctl enable mariadb
+  518  systemctl start mariadb
+  519  service mariadb start
+  520  mysql_secure_installation 
+  521  cd /var/lib/mysql/mysql/
+  522  ls
+  523  cd ..
+  524  ll
+  525  service mysqld start
+  526  yum remove mariadb mariadb-server
+  527  cd /var/lib/mysql/
+  528  ll
+  529  cd .. 
+  530  ll
+  531  mysql
+  532  ll
+  533  rm -R mysql
+  534  rm mysql/
+  535  rm -R mysql/
+  536  ll
+  537  rmdir mysql/
+  538  rmdir -p mysql/
+  539  rmdir -R mysql/
+  540  rmdir -rf mysql/
+  541  rmdir -rf mysql
+  542  rm -rf mysql
+  543  mysql
+  544  cd ..
+  545  mysql
+  546  cd /
+  547  locate mysql
+  548  cd /var/lib/
+  549  udpatedb
+  550  dbupdate
+  551  updatedb
+  552  locate mysql
+  553  yum install -y mariadb mariadb-server
+  554  mysql
+  555  service maraidb start
+  556  service mysql start
+  557  ls
+  558  mysql
+  559  netstat 
+  560  netstat -ln | grep mysql
+  561  netstat -ln | grep httpd
+  562  netstat -ln | grep http
+  563  netstat -ln | grep apache
+  564  netstat -ln | grep php
+  565  netstat -in | grep php
+  566  netstat -in
+  567  netstat -ln
+  568  netstat -ln | grep smtp
+  569  netstat -ln | grep mysql
+  570  mysql --help --verbose | grep 'log-error' | tail -1
+  571  mysql --help --verbose | grep 'datadir' | tail -1
+  572  mysql
+  573  systemd
+  574  systemctl enable mariadb
+  575  systemctl start mariadb
+  576  systemctl status mariadb
+  577  clear
+  578  systemctl status mariadb
+  579  systemctl status mariadb -l
+  580  cd /var/lib/mysql/
+  581  ll
+  582  ls
+  583  ls -h
+  584  lh
+  585  ll -h
+  586  ls
+  587  cd /var/lib/mysql/
+  588  ls
+  589  date
+  590  systemctl start mariadb
+  591  systemctl status mariadb -l
+  592  mysql_install_db --user=mysql --basedir=/user --datadir=/var/lib/mysql
+  593  mysql_install_db 
+  594  mysql
+  595  systemctl start mariadb
+  596  systemctl status mariadb -l
+  597  ll /var/lib/mysql/mysql/
+  598  cd /var/lib/mysql/
+  599  rm -rf mysql
+  600  mkdir mysql
+  601  systemctl start mariadb
+  602  clear
+  603  systemctl status mariadb -l
+  604  chown -R mysql:mysql /var/lib/mysql
+  605  ls
+  606  cd mysql/
+  607  ll
+  608  systemctl start mariadb
+  609  mysql
+  610  systemctl status mariadb -l
+  611  mysql -u root -p
+  612  ls
+  613  cat mysql.sock 
+  614  nano mysql.sock 
+  615  mysql -h 127.0.0.1 -u root 
+  616  mysql -u root 
+  617  mysql -h 127.0.0.1 -u root 
+  618  php artisan key:generate
+  619  cd /var/www/laravel
+  620  ll
+  621  php artisan key:generate
+  622  php artisan vendor:publish --tag=shopify-migrations 
+  623  chown -R apache.apache /var/www/laravel
+  624  chmod -R 755 /var/www/laravel
+  625  chmod -R 755 /var/www/laravel/storage
+  626  tail -f /var/log/httpd/error_log 
+  627  php artisan adminlte:status
+  628  php artisan vendor:publish --tag=shopify-migrations
+  629  php artisan vendor:status
+  630  composer install
+  631  php artisan vendor:publish --tag=shopify-migrations
+  632  cd vendor/
+  633  php artisan vendor:publish --tag=shopify-migrations
+  634  cd ..
+  635  php artisan vendor:publish --tag=shopify-migrations
+  636  php artisan migrate
+  637  mysql -u root -h 127.0.0.1
+  638  php artisan migrate
+  639  php artisan vendor:publish --tag=shopify-migrations
+  640  php artisan vendor:publish
+  641  php artisan vendor:publish
+  642  exit
+  643  php artisan vendor:publish --tag=shopify-config
+  644  cd /var/www/laravel.old/
+  645  ll
+  646  cd ..
+  647  cd laravel
+  648  php artisan vendor:publish --tag=shopify-config
+  649  cd app/
+  650  nano User.php 
+  651  php artisan vendor:publish --tag=shopify-migrations
+  652  cd ..
+  653  php artisan vendor:publish --tag=shopify-migrations
+  654  composer require osiset/laravel-shopify
+  655  php artisan vendor:publish --tag=shopify-migrations
+  656  cat .env
+  657  php artisan vendor:publish
+  658  php artisan vendor:publish --tag=shopify-migrations --provider="Osiset\ShopifyApp\ShopifyAppProvider"
+  659  php artisan vendor:publish --tag="shopify-migrations" --provider="Osiset\ShopifyApp\ShopifyAppProvider"
+  660  php artisan vendor:publish --provider="Osiset\ShopifyApp\ShopifyAppProvider" --tag="shopify-migrations"
+  661  php artisan vendor:publish --tag=shopify-config
+  662  nano config/shopify-app.php
+  663  php artisan vendor:publish --tag=shopify-migrations
+  664  ls
+  665  ll
+  666  cd vendor/
+  667  ll
+  668  mv osiset/ /tmp/
+  669  ll
+  670  cd ..
+  671  ll
+  672  composer require osiset/laravel-shopify
+  673  cd ..
+  674  ll
+  675  mv laravel laravel.old1
+  676  rm laravel.old laravel
+  677  mv laravel.old laravel
+  678  cd laravel
+  679  composer require osiset/laravel-shopify
+  680  ll
+  681  cd vendor/
+  682  ll
+  683  cd osiset/
+  684  ll
+  685  cd .. 
+  686  cd .. 
+  687  ll
+  688  nano composer.
+  689  nano composer.json 
+  690  mv composer.json composer.old
+  691  wget https://github.com/osiset/laravel-shopify/blob/master/composer.json
+  692  ll
+  693  php artisan vendor:publish 
+  694  php artisan key:generate
+  695  php artisan key:generate
+  696  ll
+  697  nano artisan
+  698  php artisan key:generate
+  699  cd ..
+  700  ll
+  701  rm -rf laravel
+  702  git clone https://github.com/laravel/laravel.git
+  703  cd laravel
+  704  ll
+  705  composer install
+  706  chown -R apache.apache /var/www/laravel
+  707  chmod -R 755 /var/www/laravel
+  708  chmod -R 755 /var/www/laravel/storage
+  709  chcon -R -t httpd_sys_rw_content_t /var/www/laravel/storage
+  710  cp ../laravel.old1/.env .
+  711  php artisan key:generate
+  712  composer require osiset/laravel-shopify
+  713  php artisan vendor:publish --tag=shopify-config
+  714  cd app/
+  715  nano User.php 
+  716  rm User.php 
+  717  mv User.php User.php.old
+  718  cp ../../laravel.old1/app/User.php .
+  719  cat .en
+  720  cd ..
+  721  cat .env
+  722  php artisan vendor:publish --tag=shopify-migrations
+  723  php artisan vendor:publish 
+  724  mysql -u root -h 127.0
+  725  mysql -u root -h 127.0.0.1
+  726  php artisan vendor:publish 
+  727  php artisan vendor:publish 
+  728  php artisan vendor:publish --tag=shopify-migrations
+  729  php artisan migrate
+  730  php artisan vendor:publish 
+  731  php artisan migrate
+  732  php artisan vendor:publish --tag=shopify-migrations
+  733  php artisan vendor:publish --tag=shopify-views
+  734  php artisan vendor:publish
+  735  php artisan vendor:publish --tag=shopify-migrations
+  736  php artisan vendor:publish
+  737  cd vendor/
+  738  cd osiset/
+  739  cd laravel-shopify/
+  740  cd src/
+  741  ll
+  742  cd ShopifyApp/
+  743  ll
+  744  cd resources/
+  745  ll
+  746  cd database/
+  747  ll
+  748  cd migrations/
+  749  ll
+  750  cd ..
+  751  cd ..
+  752  ll
+  753  cd ...
+  754  cd ..
+  755  ll
+  756  nano  ShopifyAppProvider.php 
+  757  cd .. 
+  758  cd .. 
+  759  cd ..
+  760   cd.. 
+  761  cd ..
+  762  cd ..
+  763  php artisan migrate:fresh
+  764  php artisan config:clear
+  765  php artisan vendor:publish
+  766  php artisan migrate vendor/osiset/laravel-shopify/src/ShopifyApp/resources/database/migrations/2020_01_29_010501_create_plans_table.php
+  767  php artisan migrate --path=vendor/osiset/laravel-shopify/src/ShopifyApp/resources/database/migrations/2020_01_29_010501_create_plans_table.php
+  768  php artisan migrate --path=vendor/osiset/laravel-shopify/src/ShopifyApp/resources/database/migrations/2020_01_29_230905_create_shops_table.php
+  769  php artisan migrate --path=vendor/osiset/laravel-shopify/src/ShopifyApp/resources/database/migrations/2020_01_29_231006_create_charges_table.php
+  770  mysql -u root -h 127.0.0.1
+  771  php artisan migrate --path=vendor/osiset/laravel-shopify/src/ShopifyApp/resources/database/migrations/2020_01_29_230905_create_shops_table.php
+  772  php artisan migrate --path=vendor/osiset/laravel-shopify/src/ShopifyApp/resources/database/migrations/2020_01_29_231006_create_charges_table.php
+  773  php artisan migrate vendor/osiset/laravel-shopify/src/ShopifyApp/resources/database/migrations/2020_01_29_010501_create_plans_table.php
+  774  php artisan migrate --path=vendor/osiset/laravel-shopify/src/ShopifyApp/resources/database/migrations/2020_01_29_010501_create_plans_table.php
+  775  mv vendor/osiset/laravel-shopify/src/ShopifyApp/resources/database/migrations vendor/osiset/laravel-shopify/src/ShopifyApp/resources/database/migrations.old
+  776  cd /var/www/
+  777  ll
+  778  cd laravel.old1/
+  779  cd vendor/
+  780  ll
+  781  cd ..
+  782  cd ..
+  783  cd laravel
+  784  ll
+  785  cd vendor/
+  786  ll
+  787  cd osiset/
+  788  cd laravel-shopify/
+  789  cd src/
+  790  cd ShopifyApp/
+  791  cd resources/
+  792  cd database/
+  793  ll
+  794  mv migrations.old/ migrations/
+  795  ll
+  796  cd migrations/
+  797  nano 2020_01_29_010501_create_plans_table.php 
+  798  mysql -u root -h 127.0.0.1
+  799  cd /var/www/laravel
+  800  ll
+  801  php artisan migrate
+  802  mysql -u root -h 127.0.0.1
+  803  php artisan migrate
+  804  mysql -u root -h 127.0.0.1
+  805  php artisan migrate
+  806  php artisan migrate
+  807  mysql -u root -h 127.0.0.1
+  808  php artisan vendor:publish --tag=shopify-jobs
+  809  mysql -u root -h 127.0.0.1
+  810  php artisan migrate
+  811  mysql -u root -h 127.0.0.1
+  812  php artisan migrate
+  813  mysql -u root -h 127.0.0.1
+  814  mysql -u root -h 127.0.0.1
+  815  php artisan migrate
+  816  mysql -u root -h 127.0.0.1
+  817  php artisan migrate
+  818  nano database/migrations/2014_10_12_000000_create_users_table.php 
+  819  mysql -u root -h 127.0.0.1
+  820  ll
+  821  nano database/migrations/2014_10_12_000000_create_users_table.php 
+  822  nano app/Providers/AppServiceProvider.php 
+  823  mysql -u root -h 127.0.0.1
+  824  php artisan migrate
+  825  nano app/Providers/AppServiceProvider.php 
+  826  nano app/Providers/AppServiceProvider.php 
+  827  php artisan migrate
+  828  php artisan migrate --path=vendor/osiset/laravel-shopify/src/ShopifyApp/resources/database/migrations/2020_01_29_010501_create_plans_table.php
+  829  php artisan migrate --path=vendor/osiset/laravel-shopify/src/ShopifyApp/resources/database/migrations/2020_01_29_231006_create_charges_table.php
+  830  php artisan migrate --path=vendor/osiset/laravel-shopify/src/ShopifyApp/resources/database/migrations/2020_01_29_230905_create_shops_table.php
+  831  php artisan migrate
+  832  mysql -u root -h 127.0.0.1
+  833  php artisan vendor:publish --tag=shopify-migrations
+  834  ll database/migrations/
+  835  cd database/migrations/
+  836  nano 2014_10_12_000000_create_configurations.php
+  837  nano 2019_11_27_071652_create_payments_table.php
+  838  php artisan migrate
+  839  cd ..
+  840  cd ..
+  841  php artisan migrate
+  842  cd app/
+  843  ll
+  844  cd Http/
+  845  ll
+  846  cd Controllers/
+  847  ll
+  848  cp /var/www/laravel.old1/app/Http/Controllers/ConfigurationController.php .
+  849  cp /var/www/laravel.old1/app/Http/Controllers/PaymentController.php .
+  850  cd ..
+  851  cd ..
+  852  ll
+  853  cd Jobs/
+  854  ll
+  855  ls
+  856  cp /var/www/laravel.old1/app/Jobs/* .
+  857  ll
+  858  cd .. 
+  859  cd ..
+  860  cd config/
+  861  ll
+  862  cp /var/www/laravel.old1/config/shopify-app.php .
+  863  mv shopify-app.php shopify-app.php.original
+  864  cp /var/www/laravel.old1/config/shopify-app.php .
+  865  cd .. 
+  866  cd resources/
+  867  cd views/
+  868  cp /var/www/laravel.old1/resources/views/* .
+  869  ll
+  870  exit
+  871  cd /var/www/
+  872  ll
+  873  zip laravel laravel/zahaby.zip -v
+  874  zip -v laravel laravel/zahaby.zip
+  875  zip -v laravel zahaby.zip
+  876  zip -l laravel
+  877  ll
+  878  zip -v -b laravel zahaby.zip
+  879  zip -v zahaby.zip laravel
+  880  ll
+  881  ls
+  882  ll
+  883  rm zahaby.zip 
+  884  zip -v -r zahaby.zip laravel
+  885  mv zahaby.zip laravel/public/
+  886  rm laravel/public/zahaby.zip 
+  887  exi
+  888  exit
+  889  hisotry
+  890  history
+  891  history > /var/www/laravel/public/1.txt
